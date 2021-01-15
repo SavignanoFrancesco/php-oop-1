@@ -19,7 +19,7 @@ class Movie{
         $this->type = $_type;
     }
 
-    //metodo per stampare le informazioni del film
+    //metodo per stampare le informazioni dell'oggetto Movie
     public function getInfo(){
         $info = [
             'title' => $this->title,
@@ -29,6 +29,7 @@ class Movie{
             'plot' => $this->plot,
             'genres' => $this->genres,
         ];
+        echo '<h1>'. $info['title'].'</h1>';
         foreach ($info as $info_key => $info_value) {
             if ($info_key == 'genres') {
                 echo '<p>'.$info_key.': ';
@@ -48,5 +49,11 @@ $the_truman_show = new Movie('The Truman Show', 1998, 'Film');
 //var_dump($the_truman_show);
 
 $the_truman_show->getInfo();
+
+//creo una nuova istanza della classe Movie
+$la_citta_incantata = new Movie('La città incantata', 2001, 'Animazione');
+//var_dump($la_citta_incantata);
+
+$la_citta_incantata->getInfo();
 
 ?>
