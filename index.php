@@ -20,7 +20,7 @@ class Movie{
     }
 
     //metodo per stampare le informazioni dell'oggetto Movie
-    public function getInfo(){
+    public function printInfo(){
         $info = [
             'title' => $this->title,
             'year' => $this->year,
@@ -42,18 +42,37 @@ class Movie{
             }
         }
     }
+
+    //metodo per ottenere le informazioni dell'oggetto Movie
+    public function getInfo(){
+        $info = [
+            'title' => $this->title,
+            'year' => $this->year,
+            'type' => $this->type,
+            'country' => $this->country,
+            'plot' => $this->plot,
+            'genres' => $this->genres,
+        ];
+        return $info;
+    }
 }
 
 //creo una nuova istanza della classe Movie
 $the_truman_show = new Movie('The Truman Show', 1998, 'Film');
 //var_dump($the_truman_show);
 
-$the_truman_show->getInfo();
+$the_truman_show->printInfo();
+$the_truman_show_info=$the_truman_show->getInfo();
+var_dump($the_truman_show_info);
+
 
 //creo una nuova istanza della classe Movie
 $la_citta_incantata = new Movie('La città incantata', 2001, 'Animazione');
 //var_dump($la_citta_incantata);
 
-$la_citta_incantata->getInfo();
+$la_citta_incantata->printInfo();
+$la_citta_incantata_info=$la_citta_incantata->getInfo();
+var_dump($la_citta_incantata_info);
+
 
 ?>
